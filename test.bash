@@ -32,8 +32,8 @@ out_1=$( ../fetch src/copu.txt)
 out_2=$( ../fetch -m movu.txt)
 exit_code=$?
 
-[ "${out_1}" = "${normal_output_copy}" ] || ng "$LINENO"
-[ "${out_2}" = "${normal_output_move}" ] || ng "$LINENO"
+[ "${out_1}" != "${normal_output_copy}" ] || ng "$LINENO"
+[ "${out_2}" != "${normal_output_move}" ] || ng "$LINENO"
 
 [ -f "./copu.txt" ] || ng "$LINENO"
 [ -f "./move.txt" ] || ng "$LINENO"
@@ -41,5 +41,17 @@ exit_code=$?
 
 cd ..
 rm -rf test_sys
+
+
+## STRANGE INPUT ###
+out=$(echo あ | ./fetch)
+[ "$?" = 1 ] || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
+
+out=$(echo  | ./fetch)
+[ "$?" = 1 ] || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
+
+[ "${res}" = 0 ] && echo OK
 
 exit $res
