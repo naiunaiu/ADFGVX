@@ -13,11 +13,12 @@ mkdir -p test_sys/src
 touch test_sys/src/copu.txt
 touch test_sys/src/movu.txt
 cd test_sys
+$(chmod +x fetch)
 
 normal_output_copy="'src/copu.txt'"
 normal_output_move="'src/movu.txt'"
-out_copy=$( python -u fetch -c src/ copu.txt)
-out_move=$( python -u fetch -m src/ movu.txt)
+out_copy=$( ../fetch -c src/ copu.txt)
+out_move=$( ../fetch -m src/ movu.txt)
 exit_code=$?
 
 [ "${out_copy}" = "${normal_output_copy}" ] || ng "$LINENO"
@@ -28,8 +29,8 @@ exit_code=$?
 [ ${exit_code} -eq 0 ] || ng "$LINENO"
 
 #以下ダメ
-out_1=$( python -u /fetch src/ copu.txt) #オプションなし
-out_2=$( python -u /fetch -m movu.txt) #場所なし
+out_1=$( ../fetch src/ copu.txt) #オプションなし
+out_2=$( ../fetch -m movu.txt) #場所なし
 exit_code=$?
 
 [ "${out_1}" != "${normal_output_copy}" ] || ng "$LINENO"
