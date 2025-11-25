@@ -16,15 +16,15 @@ cd test_sys
 
 normal_output_copy = "'src/copu.txt'"
 normal_output_move = "'src/movu.txt'"
-out_copy=$( ../fetch -c src/copu.txt)
-out_move=$( ../fetch -m src/movu.txt)
+out_copy=$( ../fetch -c test_sys/src copu.txt)
+out_move=$( ../fetch -m test_sys/src movu.txt)
 exit_code=$?
 
 [ "${out_copy}" = "${normal_output_copy}" ] || ng "$LINENO"
 [ "${out_move}" = "${normal_output_move}" ] || ng "$LINENO"
 
-[ -f "./copu.txt" ] || ng "$LINENO"
-[ -f "./move.txt" ] || ng "$LINENO"
+[ -f './copu.txt' ] || ng "$LINENO"
+[ -f './movu.txt' ] || ng "$LINENO"
 [ ${exit_code} -eq 0] || ng "$LINENO"
 
 #以下ダメ
@@ -36,8 +36,8 @@ exit_code=$?
 [ "${out_2}" != "${normal_output_move}" ] || ng "$LINENO"
 
 [ -f "./copu.txt" ] || ng "$LINENO"
-[ -f "./move.txt" ] || ng "$LINENO"
-[ ${exit_code} -eq 0] || ng "$LINENO"
+[ -f "./movu.txt" ] || ng "$LINENO"
+[ ${exit_code} -eq 2] || ng "$LINENO"
 
 cd ..
 rm -rf test_sys
