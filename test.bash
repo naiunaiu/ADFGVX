@@ -13,7 +13,6 @@ mkdir -p test_sys/src
 touch test_sys/src/copu.txt
 touch test_sys/src/movu.txt
 cd test_sys
-$(chmod +x fetch)
 
 normal_output_copy="'src/copu.txt'"
 normal_output_move="'src/movu.txt'"

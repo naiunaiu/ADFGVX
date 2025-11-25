@@ -32,6 +32,7 @@ def main():
     args = parser.parse_args()
     
     filelocation = find(args.location, args.name)
+    print(f"Found files: {filelocation}", file=sys.stderr)
     if not filelocation:
         sys.exit(1)
     
