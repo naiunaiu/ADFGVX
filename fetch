@@ -32,11 +32,11 @@ def main():
     args = parser.parse_args()
     
     filelocation = find(args.location, args.name)
-    print(f"Found files: {filelocation}", file=sys.stderr)
     if not filelocation:
         sys.exit(1)
     
     for f in filelocation:
+        print(f"'{f}")
         if args.copy:
             shutil.copy2(f, ".")
         elif args.move:
