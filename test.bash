@@ -25,7 +25,7 @@ exit_code=$?
 
 [ '-f ./copu.txt' ] || ng "$LINENO"
 [ '-f./movu.txt' ] || ng "$LINENO"
-[ ${exit_code} -eq 0] || ng "$LINENO"
+[ ${exit_code} -eq 0 ] || ng "$LINENO"
 
 #以下ダメ
 out_1=$( ../fetch src/copu.txt)
@@ -37,7 +37,7 @@ exit_code=$?
 
 [ '-f ./copu.txt' ] || ng "$LINENO"
 [ '-f ./movu.txt' ] || ng "$LINENO"
-[ ${exit_code} -eq 2] || ng "$LINENO"
+[ ${exit_code} -eq 2 ] || ng "$LINENO"
 
 cd ..
 rm -rf test_sys
