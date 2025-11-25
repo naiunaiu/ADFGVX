@@ -14,8 +14,8 @@ touch test_sys/src/copu.txt
 touch test_sys/src/movu.txt
 cd test_sys
 
-normal_output_copy = "'test_sts/src/copu.txt'"
-normal_output_move = "'test_sys/src/movu.txt'"
+normal_output_copy="'test_sts/src/copu.txt'"
+normal_output_move="'test_sys/src/movu.txt'"
 out_copy=$( ../fetch -c test_sys/src copu.txt)
 out_move=$( ../fetch -m test_sys/src movu.txt)
 exit_code=$?
