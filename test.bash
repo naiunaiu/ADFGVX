@@ -23,8 +23,8 @@ exit_code=$?
 [ "${out_copy}" = "${normal_output_copy}" ] || ng "$LINENO"
 [ "${out_move}" = "${normal_output_move}" ] || ng "$LINENO"
 
-[ -f './copu.txt' ] || ng "$LINENO"
-[ -f './movu.txt' ] || ng "$LINENO"
+[ '-f ./copu.txt' ] || ng "$LINENO"
+[ '-f./movu.txt' ] || ng "$LINENO"
 [ ${exit_code} -eq 0] || ng "$LINENO"
 
 #以下ダメ
@@ -35,8 +35,8 @@ exit_code=$?
 [ "${out_1}" != "${normal_output_copy}" ] || ng "$LINENO"
 [ "${out_2}" != "${normal_output_move}" ] || ng "$LINENO"
 
-[ -f "./copu.txt" ] || ng "$LINENO"
-[ -f "./movu.txt" ] || ng "$LINENO"
+[ '-f ./copu.txt' ] || ng "$LINENO"
+[ '-f ./movu.txt' ] || ng "$LINENO"
 [ ${exit_code} -eq 2] || ng "$LINENO"
 
 cd ..
