@@ -16,8 +16,8 @@ cd test_sys
 
 normal_output_copy="'src/copu.txt'"
 normal_output_move="'src/movu.txt'"
-out_copy=$( ../fetch -c ~/src copu.txt)
-out_move=$( ../fetch -m ~/src movu.txt)
+out_copy=$( ../fetch -c test_sys/src copu.txt)
+out_move=$( ../fetch -m test_sys/src movu.txt)
 exit_code=$?
 
 [ "${out_copy}" = "${normal_output_copy}" ] || ng "$LINENO"
@@ -28,8 +28,8 @@ exit_code=$?
 [ ${exit_code} -eq 0 ] || ng "$LINENO"
 
 #以下ダメ
-out_1=$( ../fetch src/copu.txt)
-out_2=$( ../fetch -m movu.txt)
+out_1=$( ../fetch src/copu.txt) #オプションなし
+out_2=$( ../fetch -m movu.txt) #場所なし
 exit_code=$?
 
 [ "${out_1}" = "${normal_output_copy}" ] || ng "$LINENO"
