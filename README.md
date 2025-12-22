@@ -1,11 +1,11 @@
-# robosys2025
+### robosys2025
 
-# gazoコマンド
-![test]()
+## gazoコマンド
+![test](https://github.com/naiunaiu/robosys2025/actions/workflows/test.yml/badge.svg)
 
 画像の解像度、縦横の長さを変更するコマンド
 
-#　使い方
+## 使い方
 - コマンド
   ```gazo <モード変更オプション> <画像ファイルのパス> <値入力オプション> <拡張オプション>```
 - モード変更オプションと対応する値入力オプション
