@@ -9,24 +9,24 @@
 - 暗号化
   ```
   $ echo aiueo | adfg　
-  AA_DF_GF_AV_FF
+    AA_DF_GF_AV_FF
 
   #もしくは
 
   $ adfg
-  kakikukeko sasisuseso #ここでテキストを入力
-  DV_AA_DV_DF_DV_GF_DV_AV_DV_FF_GA_AA_GA_DF_GA_GF_GA_AV_GA_FF
+    kakikukeko sasisuseso #ここでテキストを入力
+    DV_AA_DV_DF_DV_GF_DV_AV_DV_FF_GA_AA_GA_DF_GA_GF_GA_AV_GA_FF
   ```
 - 復号
   ```
   $ echo AA_DF_GF_AV_FF | adfg
-  aiueo
+    aiueo
 
   #もしくは
 
   $ adfg
-  DV_AA_DV_DF_DV_GF_DV_AV_DV_FF_GA_AA_GA_DF_GA_GF_GA_AV_GA_FF
-  kakikukeko sasisuseso
+    DV_AA_DV_DF_DV_GF_DV_AV_DV_FF_GA_AA_GA_DF_GA_GF_GA_AV_GA_FF
+    kakikukeko sasisuseso
   ```
 ## 注意
 - 暗号化できる文字は半角小文字アルファベットと、半角数字のみ。
@@ -37,6 +37,13 @@
     Wrong Input. #半角空白以外だとエラー
   ```
 - 復号する際は使い方の項目で示されている出力例と同じ書式の暗号文を入力する。
+  ```
+  $ echo GD_AV_GA_GD ｜ adfg
+    test #これならOK
+
+  #ダメ例 
+  $ echo GD AV GA GD | adfg
+  $ echo BB_AV_CA_OD | adfg #ADFGVX暗号だからADFGVX以外は使えない。
 
 ## インストール方法
 ```
