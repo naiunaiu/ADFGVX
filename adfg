@@ -1,0 +1,47 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2025 Satoh-Narumi
+# SPDX-License-Identifier: BSD-3-Clause
+
+import os
+import sys
+import string
+import numpy as np
+
+alpha = list(string.ascii_lowercase) + ['0','1','2','3','4','5','6','7','8','9']
+adfgvx = ['A', 'D', 'F', 'G', 'V', 'X']
+rplist = np.array(alpha).reshape(6 , 6)
+
+def encryption(input):
+    encrypted= []
+    for i in range(len(input)):    
+        for hol in range(len(adfgvx)):
+            for ver in range(len(adfgvx)):
+                if input[i] == rplist[hol][ver]:
+                    encrypted += adfgvx[hol] + adfgvx[ver]
+    
+    encryptedtext = " ".join(encrypted).replace(" ", "")
+    text = [encryptedtext[x:x+2] for x in range(0, len(encryptedtext), 2)]
+    output = " ".join(text).replace(" ", "_")
+    print(output)
+
+def decryption(input):
+    text = " ".join(input).replace(" ", "").split("_")
+    output = ""
+    for pair in text:
+        hol = adfgvx.index(pair[0])
+        ver = adfgvx.index(pair[1])
+        output += rplist[hol][ver]
+        
+    print(output)
+    
+def main():
+    text = list(input())
+    
+    if all(c in "ADFGVX_" for c in text):
+        decryption(text)
+    elif len(text) > 0 and all(d in alpha for d in text):
+        encryption(text)
+    else:
+        sys.exit("Wrong Input.")
+        
+main()
