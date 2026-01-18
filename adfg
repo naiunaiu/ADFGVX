@@ -35,11 +35,13 @@ def decryption(input):
     print(output)
     
 def main():
-    text = list(input())
-    
-    if all(c in "ADFGVX_" for c in text):
+    Input = input().replace(" ", "")
+    text = list(Input)
+    if Input.strip() == "":
+        sys.exit("Wrong Input.")
+    elif all(c in "ADFGVX_" for c in text):
         decryption(text)
-    elif len(text) > 0 and all(d in alpha for d in text):
+    elif all(d in alpha for d in text):
         encryption(text)
     else:
         sys.exit("Wrong Input.")

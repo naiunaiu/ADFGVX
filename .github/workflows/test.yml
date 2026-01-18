@@ -13,5 +13,5 @@ jobs:
       run: pip install Pillow
 
     - name: All test
-      run: python3 test.py
+      run: bash -xv test.bash
 
