@@ -14,8 +14,8 @@
   #もしくは
 
   $ adfg
-  aiueo #ここでテキストを入力
-  AA_DF_GF_AV_FF
+  kakikukeko sasisuseso #ここでテキストを入力
+  DV_AA_DV_DF_DV_GF_DV_AV_DV_FF_GA_AA_GA_DF_GA_GF_GA_AV_GA_FF
   ```
 - 復号
   ```
@@ -25,9 +25,18 @@
   #もしくは
 
   $ adfg
-  AA_DF_GF_AV_FF
-  aiueo
+  DV_AA_DV_DF_DV_GF_DV_AV_DV_FF_GA_AA_GA_DF_GA_GF_GA_AV_GA_FF
+  kakikukeko sasisuseso
   ```
+## 注意
+- 暗号化できる文字は半角小文字アルファベットと、半角数字のみ。
+- 暗号化する文字列は、半角空白のみで繋げる。
+  ```
+  $ echo aiueo waon | adfg #これならOK
+  $ echo aiueo_waon | adfg
+    Wrong Input. #半角空白以外だとエラー
+  ```
+- 復号する際は使い方の項目で示されている出力例と同じ書式の暗号文を入力する。
 
 ## インストール方法
 ```

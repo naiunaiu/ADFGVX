@@ -27,6 +27,12 @@ out=$(echo てすちんぐ　あん　いんぷと　てすと | ./adfg)
 out=$(echo  | ./adfg)
 [ $? -ne 0 ] || ng "$LINENO"
 
+out=$(echo BA_CF_GF_AV_FF | ./adfg)
+[ $? -ne 0 ] || ng "$LINENO"
+
+out=$(echo AA CF GF AV FF | ./adfg)
+[ $? -ne 0 ] || ng "$LINENO"
+
 [ "${res}" = 0 ] && echo OK
 
 exit $res
