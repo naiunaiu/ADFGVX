@@ -6,8 +6,12 @@
 入力テキストをADFGVX暗号で暗号化、復号するコマンド
 
 ## 使い方
-- コマンド
-  ```$ echo aiueo | adfg ```
+```$ echo aiueo | adfg ```
+あるいは
+```
+$ adfg
+aiueo #ここでテキストを入力 
+```
 
 ## インストール方法
 ```git clone https://github.com/naiunaiu/gazo.git```
