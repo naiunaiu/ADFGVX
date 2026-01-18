@@ -1,6 +1,6 @@
 ### robosys2025
 
-## gazoコマンド
+## adfgコマンド
 ![test](https://github.com/naiunaiu/robosys2025/actions/workflows/test.yml/badge.svg)
 
 入力テキストをADFGVX暗号で暗号化、復号するコマンド
@@ -10,7 +10,9 @@
   ```
   $ echo aiueo | adfg　
   AA_DF_GF_AV_FF
+
   #もしくは
+
   $ adfg
   aiueo #ここでテキストを入力
   AA_DF_GF_AV_FF
@@ -19,14 +21,18 @@
   ```
   $ echo AA_DF_GF_AV_FF | adfg
   aiueo
+
   #もしくは
+
   $ adfg
   AA_DF_GF_AV_FF
   aiueo
   ```
 
 ## インストール方法
-```git clone https://github.com/naiunaiu/gazo.git```
+```
+$ git clone https://github.com/naiunaiu/ADFGVX.git
+```
 
 ## 必要なソフトウェア
 - Python

@@ -22,10 +22,10 @@ out=$(echo GD_AV_GA_GD_DF_FD_DA_AA_FD_DF_FD_FG_GF_GD_GD_AV_GA_GD | ./adfg)
 
 
 out=$(echo てすちんぐ　あん　いんぷと　てすと | ./adfg)
-[ "${out}" = "Wrong Input." ] || ng "$LINENO"
+[ $? -ne 0 ] || ng "$LINENO"
 
 out=$(echo  | ./adfg)
-[ "${out}" = "Wrong Input." ] || ng "$LINENO"
+[ $? -ne 0 ] || ng "$LINENO"
 
 [ "${res}" = 0 ] && echo OK
 
