@@ -11,6 +11,7 @@ ng () {
 res=0
 
 chmod +x adfg
+pip install numpy
 
 out=$(echo testing an input test | ./adfg)
 [ "${out}" = "GD_AV_GA_GD_DF_FD_DA_AA_FD_DF_FD_FG_GF_GD_GD_AV_GA_GD" ] || ng "$LINENO"

@@ -2,7 +2,6 @@
 # SPDX-FileCopyrightText: 2025 Satoh-Narumi
 # SPDX-License-Identifier: BSD-3-Clause
 
-import os
 import sys
 import string
 import numpy as np

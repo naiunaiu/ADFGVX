@@ -6,12 +6,24 @@
 入力テキストをADFGVX暗号で暗号化、復号するコマンド
 
 ## 使い方
-```$ echo aiueo | adfg ```
-あるいは
-```
-$ adfg
-aiueo #ここでテキストを入力 
-```
+- 暗号化
+  ```
+  $ echo aiueo | adfg　
+  AA_DF_GF_AV_FF
+  #もしくは
+  $ adfg
+  aiueo #ここでテキストを入力
+  AA_DF_GF_AV_FF
+  ```
+- 復号
+  ```
+  $ echo AA_DF_GF_AV_FF | adfg
+  aiueo
+  #もしくは
+  $ adfg
+  AA_DF_GF_AV_FF
+  aiueo
+  ```
 
 ## インストール方法
 ```git clone https://github.com/naiunaiu/gazo.git```
